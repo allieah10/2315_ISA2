@@ -21,7 +21,23 @@ pipeline {
                 }
             }
         }
-
+        stage('delete container') {
+            steps {
+                script {
+                    echo 'delete container...'
+                    bat 'docker rm -f 2315'
+                }
+            }
+        }
+        stage('delete container') {
+            steps {
+                script {
+                    echo 'create and run container...'
+                    bat 'docker pull 2315'
+                     bat 'docker run -d --name 2315 2315'
+                }
+            }
+        }
         stage('Run Docker Container') {
             steps {
                 script {
