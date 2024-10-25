@@ -32,8 +32,8 @@ pipeline {
         stage('create container') {
             steps {
                 script {
-                    echo 'create and run container...'
-                    bat 'docker pull myapp:latest'
+                    echo 'create container...'
+                    bat 'docker create --name 2315 myapp:latest'
                      
                 }
             }
