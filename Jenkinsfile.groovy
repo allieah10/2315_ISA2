@@ -11,14 +11,7 @@ pipeline {
             }
         }
 
-        stage('Clone Repository') {
-            steps {
-                script {
-                    echo 'Cloning repository...'
-                    bat 'git clone "https://github.com/allieah10/2315_ISA2.git"'
-                }
-            }
-        }
+       
 
         stage('Build Docker Image') {
             steps {
