@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                     echo 'create and run container...'
-                    bat 'docker pull 2315'
+                    bat 'docker pull myapp:latest'
                      
                 }
             }
