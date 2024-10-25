@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building Docker image...'
-                    bat 'docker build -t 2315:latest .'
+                    bat 'docker build -t myapp:latest .'
                 }
             }
         }
@@ -29,12 +29,12 @@ pipeline {
                 }
             }
         }
-        stage('delete container') {
+        stage('create container') {
             steps {
                 script {
                     echo 'create and run container...'
                     bat 'docker pull 2315'
-                     bat 'docker run -d --name 2315 2315'
+                     
                 }
             }
         }
@@ -42,7 +42,7 @@ pipeline {
             steps {
                 script {
                     echo 'Running Docker container...'
-                    bat 'docker run -d --name testcontainer -p 5000:5000 testimage:latest'
+                    bat 'docker run -d --name 2315 -p 5000:5000 myapp:latest'
                 }
             }
         }
