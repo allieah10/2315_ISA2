@@ -29,16 +29,8 @@ pipeline {
                 }
             }
         }
-        stage('create container') {
-            steps {
-                script {
-                    echo 'create container...'
-                    bat 'docker create --name 2315 myapp:latest'
-                     
-                }
-            }
-        }
-        stage('Run Docker Container') {
+       
+        stage('create and Run Docker Container') {
             steps {
                 script {
                     echo 'Running Docker container...'
